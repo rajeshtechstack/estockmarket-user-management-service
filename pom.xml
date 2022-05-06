@@ -16,5 +16,6 @@
         <module>estockmarket-user-core-service</module>
         <module>estockmarket-user-service</module>
         <module>estockmarket-user-qurey-service</module>
+        <module>estock-user-oauth-service</module>
     </modules>
 </project>
