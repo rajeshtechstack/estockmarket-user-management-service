@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/v1")
+@RequestMapping(path = "/api/v1/userlookup")
 public class UserQueryController {
 
     private final QueryGateway queryGateway;
@@ -25,7 +25,7 @@ public class UserQueryController {
         this.queryGateway = queryGateway;
     }
 
-    @GetMapping("/getAllUsers")
+    @GetMapping("/")
     @PreAuthorize("hasAuthority('READ_PRIVILEGE')")
     public ResponseEntity<UserLookupResponse> getAllUsers(){
         try{
@@ -43,7 +43,7 @@ public class UserQueryController {
         }
     }
 
-    @GetMapping("/getUser/{id}")
+    @GetMapping("/{id}")
     @PreAuthorize("hasAuthority('READ_PRIVILEGE')")
     public ResponseEntity<UserLookupResponse> getUserById(@PathVariable(value = "id") String id){
         try{
@@ -61,7 +61,7 @@ public class UserQueryController {
         }
     }
 
-    @GetMapping("/{filter}")
+    @GetMapping("/search/{filter}")
     @PreAuthorize("hasAuthority('READ_PRIVILEGE')")
     public ResponseEntity<UserLookupResponse> searchUserByFilter(@PathVariable(value = "filter") String filter){
         try{
