@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/api/v1/userlookup")
+@RequestMapping(path = "/api/v1.0/userlookup")
 public class UserQueryController {
 
     private final QueryGateway queryGateway;

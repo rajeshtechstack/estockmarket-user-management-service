@@ -1,6 +1,7 @@
 package com.estock.market.config;
 
 import com.estock.market.services.UserService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,7 +38,7 @@ public class AuthServerConfig extends AuthorizationServerConfigurerAdapter {
     private final UserService userService;
 
     public AuthServerConfig(AuthenticationManager authenticationManager, PasswordEncoder passwordEncoder,
-                            UserService userService) {
+                            @Qualifier("userService") UserService userService) {
         this.authenticationManager = authenticationManager;
         this.passwordEncoder = passwordEncoder;
         this.userService = userService;
